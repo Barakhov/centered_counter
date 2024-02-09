@@ -18,3 +18,21 @@ test('defaults to start 0, step 1 when no arguments passed', function () {
   expect(count()).toBe(1)
   expect(count()).toBe(2)
 })
+
+test("creates a count function with negative step value", function () {
+  const count = factory(5, -2);
+  expect(count()).toBe(3);
+  expect(count()).toBe(1);
+});
+
+test("creates a count function with negative start value", function () {
+  const count = factory(-3, 2);
+  expect(count()).toBe(-1);
+  expect(count()).toBe(1);
+});
+
+test("creates a count function with floating-point step value", function () {
+  const count = factory(1, 0.5);
+  expect(count()).toBe(1.5);
+  expect(count()).toBe(2);
+});
