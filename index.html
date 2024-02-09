@@ -8,7 +8,7 @@
   </head>
   <body>
     <main>
-      <div class="controls">
+      <header class="controls">
         <div class="control">
           <label for="start_at">Start at</label>
           <input name="start_at" value="0" id="start_at" />
@@ -17,12 +17,12 @@
           <label for="step">Step</label>
           <input name="step" value="1" id="step" />
         </div>
-      </div>
-      <div class="container">
-        <button class="count_button">
+      </header>
+      <section class="container">
+        <button class="count_button" aria-label="Increment count">
           <span class="current_count"> 0 </span>
         </button>
-      </div>
+      </section>
     </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
