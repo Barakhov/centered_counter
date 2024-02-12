@@ -8,15 +8,17 @@ const count_button = document.querySelector('.count_button') as HTMLButtonElemen
 const current_count = document.querySelector('.current_count') as HTMLSpanElement
 
 function update_count_and_reset_counter() {
-  const start_at_number = parseInt(start_at_control.value, 10)
-  const step_number = parseInt(step_control.value, 10)
-
-  count = factory(start_at_number, step_number)
-  update_count()
+  count = factory(+start_at_control.value, +step_control.value)
+  reset_counter(+start_at_control.value)
 }
 
 function update_count() {
   current_count.innerText = count().toString()
+}
+
+function reset_counter(start_at_value: number) {
+  console.log(start_at_control.value)
+  current_count.innerText = start_at_value.toString()
 }
 
 start_at_control?.addEventListener('change', update_count_and_reset_counter)
