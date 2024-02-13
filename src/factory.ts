@@ -6,10 +6,7 @@
  * @returns {Function} - A function that generates the number sequence every time it is called.
  */
 export const factory = (start: number = 0, step: number = 1) => {
-  let current = start
   return () => {
-    const value = current
-    current += step
-    return value + step
+    return start += step
   }
 }
