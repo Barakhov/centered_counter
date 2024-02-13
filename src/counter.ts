@@ -1,26 +1,26 @@
-import { factory } from './factory'
+import { factory } from './factory';
 
-export let count = factory(0, 1)
+export let countValue = factory(0, 1);
 
-export function update_count_and_reset_counter(
-  start_at_control: HTMLInputElement,
-  step_control: HTMLInputElement,
-  current_count: HTMLSpanElement
+export function updateCountAndResetCounter(
+  startInput: HTMLInputElement,
+  stepInput: HTMLInputElement,
+  currentCountDisplay: HTMLSpanElement
 ) {
-  count = factory(+start_at_control.value, +step_control.value)
-  reset_counter(current_count, +start_at_control.value)
+  countValue = factory(+startInput.value, +stepInput.value);
+  resetCounterDisplay(+startInput.value, currentCountDisplay);
 }
 
-export function update_count(
-  current_count: HTMLSpanElement,
-  countFuntion: () => number
+export function updateCount(
+  countFunction: () => number,
+  currentCountDisplay: HTMLSpanElement
 ) {
-  current_count.innerText = countFuntion().toString()
+  currentCountDisplay.innerText = countFunction().toString();
 }
 
-export function reset_counter(
-  current_count: HTMLSpanElement,
-  start_at_value: number
+function resetCounterDisplay(
+  startValue: number,
+  currentCountDisplay: HTMLSpanElement
 ) {
-  current_count.innerText = start_at_value.toString()
+  currentCountDisplay.innerText = startValue.toString();
 }
